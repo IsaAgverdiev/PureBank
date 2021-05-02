@@ -226,12 +226,15 @@
 		width: 100%;
 		object-fit: cover;
 	}
-	&__content{
-		max-width: 650px;
+
+	&__content {
+		max-width: 600px;
 	}
+
 	&__text {
 		margin-top: 30px;
 	}
+
 	&__text+.about__text {
 		margin-top: 15px;
 	}
@@ -245,4 +248,177 @@
 	100% {
 		transform: translateY(10px);
 	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+	&__inner {
+		padding-top: 50px;
+		position: relative;
+		border-top: 1px solid $primary;
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {}
+
+	&__link {
+		color: #fff;
+		padding: 5px 10px;
+		cursor: pointer;
+		transition: .2s;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			border-radius: 3px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 0%;
+			background-color: $primary;
+			transition: .2s ease-in-out;
+		}
+
+		&:hover::before {
+			height: 100%;
+		}
+	}
+
+	&__item+.footer__item {
+		margin-left: 20px;
+	}
+
+	&__social-links {
+		display: flex;
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		font-size: 16px;
+		margin-top: 40px;
+		padding-bottom: 20px;
+		color: grey;
+	}
+}
+
+.social__link {
+	&:hover path {
+		fill: $primary;
+	}
+
+	&:active path {
+		fill: darken($primary, 10%);
+	}
+}
+
+.social__link+.social__link {
+	margin-left: 5px;
+}
+
+.qa {
+	&__title {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	&__inner {
+		margin-top: 70px;
+		margin-bottom: 70px;
+	}
+
+
+	&__accordion-item {
+		border-radius: 20px;
+	}
+
+	&__accordion-header {
+		background-color: lighten(#302D42, 20%);
+		border-bottom: 1px solid lighten(#302D42, 10%);
+		color: #fff;
+		padding: 25px;
+		position: relative;
+		cursor: pointer;
+	}
+
+	&__accordion-icon,
+	&__accordion-icon--minus {
+		position: absolute;
+		width: 21px;
+		height: 21px;
+		right: 30px;
+		top: 50%;
+		transform: translateY(-50%);
+		background-image: url(../images/plus.svg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		transition: .5s;
+	}
+
+	&__accordion-icon--minus {
+		transform: rotate(180deg);
+		height: 3px;
+	}
+
+	&__accordion-body {
+		background-color: lighten(#302D42, 5%);
+		padding: 15px 20px 5px;
+		font-weight: 300;
+		display: none;
+
+		&--active {
+			display: block;
+		}
+	}
+
+
+	&__accordion-text+.qa__accordion-text {
+		margin-top: 15px;
+	}
+
+	&__accordion-list {
+		margin-bottom: 15px;
+		padding-left: 40px;
+	}
+
+	&__accordion-el {
+		list-style: disc;
+	}
+
+	// display: none;
 }

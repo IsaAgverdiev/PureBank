@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+p {
+	line-height: 150%;
+}
+
+
+ul,
+ol {
+	list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+	letter-spacing: inherit;
+}
+
+button,
+button:active,
+button:focus {
+	outline: transparent;
+}
+
+body {
+	min-height: 100vh;
+	font-size: 18px;
+	letter-spacing: .5px;
+	overflow-x: hidden;
+	background-color: #302D42;
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+}
+
+.container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.container-fluid {
+	max-width: 1920px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.text-pink {
+	color: #D967FF;
+}
+
+.title {
+	font-size: 48px;
+}

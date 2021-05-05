@@ -46,6 +46,9 @@ select {
 	color: inherit;
 	letter-spacing: inherit;
 }
+input {
+	outline: transparent;
+}
 
 button,
 button:active,
@@ -87,6 +90,7 @@ body {
 
 .title {
 	font-size: 48px;
+	font-weight: 700;
 }
 
 .hidden {

@@ -2,14 +2,17 @@
   "name": "gulp",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://isaagverdiev.github.io/PureBank/",
   "scripts": {
-    "test": "echo \"Error: no text specified\"&& exit 1"
+    "predeploy": "gulp build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Isa Agverdiev",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.13",
     "del": "^6.0.0",
+    "gh-pages": "^3.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-concat": "^2.6.1",

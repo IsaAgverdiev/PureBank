@@ -19,10 +19,10 @@ let popOverlay = document.querySelector(".popup");
 let popText = document.querySelector(".popup__text");
 
 
-// VanillaTilt.init(document.querySelector(".card-item"), {
-//   max: 20,
-//   speed: 100,
-// });
+VanillaTilt.init(document.querySelector(".card-item"), {
+  max: 20,
+  speed: 100,
+});
 
 accordionItems.addEventListener("click", showAccordion);
 form.addEventListener("submit", formSend);

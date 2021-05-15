@@ -1,5 +1,5 @@
 # Сайт для банка PureBank. 
-> ссылка на проект <a href="https://isaagverdiev.github.io/KoreanCrem/">тут</a>
+> ссылка на проект <a href="https://isaagverdiev.github.io/PureBank/">тут</a>
 ## Задача: Необходимо было разработать дизайн макет и сверсать сайт, для оформление карты банка
 
 ### Что было сделано:

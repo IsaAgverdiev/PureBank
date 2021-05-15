@@ -25,7 +25,7 @@
 		align-items: center;
 	}
 
-	&__item + .header__item {
+	&__item+.header__item {
 		margin-left: 50px;
 	}
 
@@ -234,7 +234,7 @@
 		margin-top: 30px;
 	}
 
-	&__text + .about__text {
+	&__text+.about__text {
 		margin-top: 15px;
 	}
 }
@@ -253,9 +253,30 @@
 	padding-top: 35px;
 	padding-bottom: 70px;
 	background-color: lighten(#302D42, 10%);
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(#302D42, .9) url('../images/loading.gif') center / 50px no-repeat;
+		opacity: 0;
+		visibility: hidden;
+		transition: .3s;
+	}
+
+	&._sending::after {
+		opacity: 1;
+		visibility: visible;
+	}
+
 	&__title {
 		text-align: center;
 	}
+
 	&__inner {
 		max-width: 570px;
 		margin: 0 auto;
@@ -264,15 +285,19 @@
 	&__area {
 		margin-top: 30px;
 	}
+
 	&__item {
 		position: relative;
 	}
+
 	&__items-contacts {
 		display: flex;
 		justify-content: space-between;
+
 		.form__item {
 			width: 48%;
 		}
+
 		.form__input {
 			margin-bottom: 0px;
 		}
@@ -285,19 +310,23 @@
 		padding-left: 20px;
 		padding-right: 20px;
 		color: #302d42;
-		background-color: lighten(#302d42, 60%);
+		background-color: #fff;
 		border-radius: 10px;
 		border: none;
 		margin-bottom: 25px;
+		transition: .2s;
+
 		&._error {
-			box-shadow: 0 0 15px tomato;
+			box-shadow: 0 0 10px #E0AB34;
 		}
-		&:focus ~ .form__label {
+
+		&:focus~.form__label {
 			top: 14px;
 			color: $primary;
 			font-size: 11px;
 		}
 	}
+
 	&__label {
 		position: absolute;
 		top: 50%;
@@ -307,16 +336,28 @@
 		transition: 0.2s ease;
 		pointer-events: none;
 	}
+
 	&__checkbox {
 		margin-top: 15px;
 		margin-bottom: 30px;
-	}
-	&__checkbox-input {
-		display: none;
-		&:checked + .form__checkbox-label::after {
-			transform: scale(1);
+
+		&._error .form__checkbox-label::before {
+			border: 1px solid #E0AB34;
+			box-shadow: 0 0 2px #E0AB34;
 		}
 	}
+
+	&__checkbox-input {
+		display: none;
+
+		&:checked+.form__checkbox-label::after {
+			border: 1px solid $primary;
+			box-shadow: 0 0 2px #E0AB34;
+			transform: scale(1);
+		}
+
+	}
+
 	&__checkbox-label {
 		font-size: 14px;
 		font-weight: 300;
@@ -324,6 +365,7 @@
 		align-items: center;
 		cursor: pointer;
 		position: relative;
+
 		&::before {
 			content: "";
 			flex: 0 0 16px;
@@ -334,6 +376,7 @@
 			border-radius: 1px;
 			margin-right: 10px;
 		}
+
 		&::after {
 			content: "";
 			position: absolute;
@@ -347,6 +390,7 @@
 			transform: scale(0);
 		}
 	}
+
 	&__btn {
 		max-width: 100%;
 		width: 100%;
@@ -359,6 +403,7 @@
 		border-radius: 10px;
 		cursor: pointer;
 		transition: 0.2s;
+
 		&:hover {
 			box-shadow: 0 0 25px rgba($primary, 1);
 		}
@@ -394,7 +439,8 @@
 		padding: 20px 20px;
 		border-radius: 15px;
 	}
-	&__international-item + .course__international-item {
+
+	&__international-item+.course__international-item {
 		margin-left: 40px;
 	}
 
@@ -602,7 +648,7 @@
 		pointer-events: none;
 	}
 
-	&__accordion-text + .qa__accordion-text {
+	&__accordion-text+.qa__accordion-text {
 		margin-top: 15px;
 	}
 
@@ -633,8 +679,7 @@
 		display: flex;
 	}
 
-	&__item {
-	}
+	&__item {}
 
 	&__link {
 		color: #fff;
@@ -662,7 +707,7 @@
 		}
 	}
 
-	&__item + .footer__item {
+	&__item+.footer__item {
 		margin-left: 20px;
 	}
 
@@ -690,6 +735,55 @@
 	}
 }
 
-.social__link + .social__link {
+.social__link+.social__link {
 	margin-left: 10px;
+}
+
+.popup {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(#000, .5);
+
+	&__content {
+		position: absolute;
+		width: 350px;
+		height: 150px;
+		padding: 10px;
+		text-align: center;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 20px;
+		background-color: #302d42;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0 0 30px rgba(#000, .7);
+	}
+
+	&__text {
+		font-size: 22px;
+		color: #fff;
+		color: rgb(0, 202, 118);
+	}
+
+	&__close-btn {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		padding: 0;
+		border: none;
+		border-radius: 20px;
+		background-color: transparent;
+		background: url('../images/clouse.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		right: 8px;
+		top: 8px;
+		&:hover {
+			background-color: darken(#302D42, 5%);
+		}
+	}
 }

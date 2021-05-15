@@ -144,31 +144,31 @@
               <form class="form__area" method="post">
                 <div class="form__items-info">
                   <div class="form__item">
-                    <input class="form__input form__secondname-input _req" type="text"/>
+                    <input class="form__input form__secondname-input _req" type="text" name="secondname" />
                     <label class="form__label form__secondname-label">Фамилия</label>
                   </div>
                   <div class="form__item">
-                    <input class="form__input form__firstname-input _req" type="text"  />
+                    <input class="form__input form__firstname-input _req" type="text" name="firstname" />
                     <label class="form__label form__firstname-label">Имя</label>
                   </div>
                   <div class="form__item">
-                    <input class="form__input form__patronymic-input _req" type="text" />
+                    <input class="form__input form__patronymic-input _req" type="text" name="patronymic" />
                     <label class="form__label form__patronymic-label">Отчество</label>
                   </div>
                 </div>
                 <div class="form__items-contacts">
                   <div class="form__item">
-                    <input class="form__input form__phone-input _req" type="tel" />
+                    <input class="form__input form__phone-input _req" type="tel" name="tel" />
                     <label class="form__label form__patronymic-label">Мобильный телефон</label>
                   </div>
                   <div class="form__item">
-                    <input class="form__input form__email-input _req _email" type="email" />
+                    <input class="form__input form__email-input _req _email" type="email" name="email" />
                     <label class="form__label form__patronymic-label">Электронная почта</label>
                   </div>
                 </div>
                 <div class="form__item">
                   <div class="form__checkbox">
-                    <input class="form__checkbox-input" id="formAgreement" type="checkbox" />
+                    <input class="form__checkbox-input _req" id="formAgreement" type="checkbox" name="checkbox" />
                     <label class="form__checkbox-label" for="formAgreement">Я соглашаюсь с условиями и даю свое согласие на обработку и использование моих персональных данных, и разрешаю сделать запрос в бюро кредитных историй</label>
                   </div>
                 </div>
@@ -255,7 +255,6 @@
                     <p class="qa__accordion-text">
                       Код находится на оборотной стороне вашей карты. Код можно узнать в приложении PureBank Онлайн. Для этого в приложении выберите нужную карту → «Информация о карте» → «Прислать CVC/CVV в СМС». Трёхзначный номер придёт в СМС.
                     </p>
-
                     <p class="qa__accordion-text">Никогда и никому не сообщайте CVC/CVV вашей карты.</p>
                   </div>
                 </div>
@@ -323,6 +322,13 @@
       </main>
       <!-- /.main -->
 
+      <div class="popup hidden">
+        <div class="popup__content">
+          <p class="popup__text"></p>
+          <button class="popup__close-btn"></button>
+        </div>
+      </div>
+      <!-- popup -->
       <footer class="footer">
         <div class="container">
           <div class="footer__inner">

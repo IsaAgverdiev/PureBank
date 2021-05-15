@@ -10,6 +10,14 @@ const selectCount = document.querySelectorAll(".course__convert-select-current")
 // select
 let selectHeader = document.querySelectorAll(".course__convert-select-header");
 let selectItem = document.querySelectorAll(".course__convert-select-item");
+// form
+let input = document.querySelectorAll(".form__input");
+let formWrap = document.querySelector(".form");
+let form = document.querySelector(".form__area");
+// pop
+let popOverlay = document.querySelector(".popup");
+let popText = document.querySelector(".popup__text");
+
 
 // VanillaTilt.init(document.querySelector(".card-item"), {
 //   max: 20,
@@ -17,9 +25,15 @@ let selectItem = document.querySelectorAll(".course__convert-select-item");
 // });
 
 accordionItems.addEventListener("click", showAccordion);
+form.addEventListener("submit", formSend);
+popOverlay.addEventListener("click", (e) => {
+  e.stopPropagation();
+  closeModal(e);
+});
 
 getCurrencies();
 select();
+labelUp();
 
 function showAccordion(e) {
   if (e.target.tagName.toLowerCase() === "div") {
@@ -74,14 +88,15 @@ inputRub.oninput = () => {
 };
 
 function labelUp() {
-  let input = document.querySelectorAll(".form__input");
-  let label = document.querySelectorAll(".form__label");
-
   for (let i = 0; i < input.length; i++) {
     const inputReq = input[i];
     let labelReq = inputReq.nextElementSibling;
+    inputReq.oninput = () => getStyle();
 
-    inputReq.oninput = () => {
+    if (inputReq.value == "") {
+      getStyle();
+    }
+    function getStyle() {
       if (inputReq.value !== "") {
         labelReq.style.fontSize = "11px";
         labelReq.style.color = "#CA48F6";
@@ -92,36 +107,25 @@ function labelUp() {
         labelReq.style.top = "50%";
         inputReq.blur();
       }
-    };
+    }
   }
 }
-labelUp();
-
-let form = document.querySelector(".form");
-form.addEventListener("submit", formSend);
 
 async function formSend(e) {
   e.preventDefault();
 
   let error = formValidate(form);
 
-  let formData = new FormData(form);
-
   if (error === 0) {
-    form.classList.add("_sending");
-    let response = await fetch("sendmail.php", {
-      method: "POST",
-      body: formData,
-    });
-    if (response.ok) {
-      let result = await response.json();
-      alert(result.message);
-      form.reset();
-    } else {
-      alert("Ошибка");
-    }
+    popText.style.color = "rgb(0, 202, 118)";
+    popContent.style.top = "50%";
+    openModal("Успешно отправлено");
+    form.reset();
+    labelUp();
   } else {
-    alert("Заполните обязательные поля");
+    popText.style.color = "rgb(202, 0, 0)";
+    popContent.style.top = '20%';
+    openModal("Заполните обязательные поля");
   }
 }
 
@@ -131,6 +135,7 @@ function formValidate(form) {
   let label = document.querySelectorAll(".form__label");
   for (let i = 0; i < formReq.length; i++) {
     const input = formReq[i];
+
     formRemoveError(input);
 
     if (input.classList.contains("_email")) {
@@ -162,4 +167,17 @@ function formRemoveError(input) {
 }
 function emailTest(input) {
   return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+
+function openModal(message) {
+  popText.textContent = message;
+  popOverlay.classList.remove("hidden");
+}
+
+function closeModal(e) {
+  if (e.target.classList.contains("popup__close-btn")) {
+    popOverlay.classList.add("hidden");
+  } else if (e.target.classList.contains("popup")) {
+    popOverlay.classList.add("hidden");
+  }
 }

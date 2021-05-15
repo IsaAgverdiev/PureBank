@@ -16,6 +16,7 @@ let formWrap = document.querySelector(".form");
 let form = document.querySelector(".form__area");
 // pop
 let popOverlay = document.querySelector(".popup");
+let popContent = document.querySelector(".popup__content");
 let popText = document.querySelector(".popup__text");
 
 

@@ -41,7 +41,9 @@ function images () {
 function scripts() {
 	return src([
 		'node_modules/vanilla-tilt/dist/vanilla-tilt.min.js',
-		'app/js/main.js',
+		'node_modules/inputmask/dist/inputmask.min.js',
+		'app/js/*.js',
+		'!app/js/*.min.js'
 	])
 	.pipe(concat('main.min.js'))
 	.pipe(uglify())

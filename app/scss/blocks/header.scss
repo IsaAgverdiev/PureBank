@@ -1,0 +1,50 @@
+.header {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  &__logo {
+    padding-right: 10px;
+  }
+
+  &__logo-img {
+    width: 80px;
+    height: 50px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item+.header__item {
+    margin-left: 50px;
+  }
+
+  &__link:hover {
+    color: $primary;
+  }
+
+  &__btn {
+    color: $primary;
+    padding: 10px 15px;
+    border: 1px solid $primary;
+    border-radius: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      color: #fff;
+      background-color: $primary;
+      box-shadow: 0 0 10px $primary;
+    }
+
+    &:active {
+      background-color: darken($primary, 20%);
+    }
+  }
+}

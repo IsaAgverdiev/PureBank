@@ -1,0 +1,63 @@
+@media (max-width: 767.98px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .cards {
+    &__inner {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+
+    &__content-text {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+
+    &__content-btn {
+      font-size: 18px;
+      max-width: 300px;
+      width: 100%;
+      padding: 15px 25px;
+    }
+  }
+
+  .advantages {
+    &__inner {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 704px) {
+  .card {
+    &-item {
+      width: 270px;
+      height: 170px;
+      padding: 10px 20px;
+    }
+
+  }
+}
+
+@media (max-width: 614px) {
+  .cards {
+    &__plastic {
+      display: none;
+    }
+
+    &__content {
+      width: 100%;
+    }
+  }
+}

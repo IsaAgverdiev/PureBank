@@ -46,6 +46,7 @@ select {
 	color: inherit;
 	letter-spacing: inherit;
 }
+
 input {
 	outline: transparent;
 }
@@ -87,6 +88,7 @@ body {
 .text-pink {
 	color: #D967FF;
 }
+
 .text-red {
 	color: rgb(202, 0, 0);
 }
@@ -98,4 +100,67 @@ body {
 
 .hidden {
 	display: none;
+}
+.btn-burger {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	outline: none;
+	width: 46px;
+	height: 46px;
+	border: none;
+	padding: 0;
+	border-radius: 15px;
+	background-color: transparent;
+	z-index: 100;
+	position: relative;
+	transition: all .4s ease-in;
+	cursor: pointer;
+
+	&__line {
+		transition: all .4s;
+		display: block;
+		width: 24px;
+		height: 1px;
+		margin-top: 8px;
+		border-radius: 20px;
+		background-color: $primary;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&.btn-burger--close {
+		.btn-burger {
+			&__line:nth-child(1) {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				right: 50%;
+				bottom: 50%;
+				width: 24px;
+				margin: 0;
+				padding: 0;
+				transform: translate(-50%) rotate(45deg);
+			}
+
+			&__line:nth-child(3) {
+				display: none;
+			}
+
+			&__line:nth-child(2) {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				right: 50%;
+				bottom: 50%;
+				width: 24px;
+				margin: 0;
+				padding: 0;
+				transform: translate(-50%) rotate(-45deg);
+			}
+		}
+	}
 }

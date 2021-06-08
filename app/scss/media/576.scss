@@ -83,6 +83,99 @@
       font-size: 18px;
     }
   }
+
+  .course {
+    &__inner {
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__international-list {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    &__international-item {
+      padding: 10px;
+    }
+
+    &__international-item+.course__international-item {
+      margin-left: 10px;
+    }
+
+    &__international-title {
+      font-size: 18px;
+    }
+
+    &__international-count {
+      margin-top: 5px;
+      font-size: 22px;
+    }
+
+    &__convert-select,
+    &__convert-inputs {
+      display: block;
+    }
+
+    &__convert-name {
+      margin-bottom: 5px;
+    }
+
+    &__convert-rub {
+      margin-bottom: 15px;
+    }
+
+    &__convert-rub,
+    &__convert-other,
+    &__convert-input {
+      width: 100%;
+    }
+
+    &__convert-input+.course__convert-input {
+      margin-top: 15px;
+    }
+  }
+
+  .footer {
+    &__inner {
+      padding-top: 15px;
+    }
+
+    &__logo {
+      width: 50px;
+    }
+
+    &__list {
+      display: block;
+      text-align: center;
+    }
+
+    &__item+.footer__item {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    &__bottom-copyright {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  .social__link+.social__link {
+    margin-left: 10px;
+  }
+
 }
 
 @media (max-width: 400px) {

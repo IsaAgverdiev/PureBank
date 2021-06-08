@@ -1,6 +1,8 @@
 .course {
   &__inner {
-    margin-bottom: 100px;
+    max-width: 750px;
+    margin: 0 auto;
+    margin-bottom: 70px;
   }
 
   &__title {
@@ -9,7 +11,7 @@
 
   &__international-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -24,9 +26,7 @@
     border-radius: 15px;
   }
 
-  &__international-item+.course__international-item {
-    margin-left: 40px;
-  }
+  
 
   &__international-title {
     display: block;
@@ -42,11 +42,13 @@
 
   &__convert-select {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   &__convert-rub,
   &__convert-other {
+    width: 47%;
     &.active {
       .course__convert-select-body {
         display: block;
@@ -66,7 +68,6 @@
 
   &__convert-rub {
     position: relative;
-    margin-right: 30px;
   }
 
   &__convert-other {
@@ -81,10 +82,9 @@
 
   &__convert-select-header {
     position: relative;
-    width: 300px;
-    height: 50px;
     display: flex;
     align-items: center;
+    height: 50px;
     background-color: darken(#302d42, 10%);
     border-radius: 5px;
     cursor: pointer;
@@ -146,12 +146,12 @@
 
   &__convert-inputs {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 30px;
   }
 
   &__convert-input {
-    width: 300px;
+    width: 47%;
     height: 50px;
     padding-left: 20px;
     padding-right: 20px;
@@ -159,9 +159,5 @@
     color: #000;
     border-radius: 5px;
     border: none;
-  }
-
-  &__convert-input:first-child {
-    margin-right: 30px;
   }
 }

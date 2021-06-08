@@ -14,18 +14,13 @@ function showRightMenu() {
   // disableScroll();
   burgerMenuBtn.classList.toggle("btn-burger--close");
   if (burgerMenuBtn.classList.contains("btn-burger--close")) {
-
-    headerMenu.classList.add('active');
+    headerMenu.classList.add("active");
     headerList.classList.add("active");
-    headerBtn.classList.add('active');
-    // headerMenu.style.display = "flex";
-    // headerBtn.style.display = "flex";
+    headerBtn.classList.add("active");
   } else {
     headerMenu.classList.remove("active");
-     headerList.classList.remove("active");
+    headerList.classList.remove("active");
     headerBtn.classList.remove("active");
-    // headerMenu.style.display = "none";
-    // headerBtn.style.display = "none";
   }
   // overlayMenu.classList.toggle("hidden");
   // if (overlayMenu.classList.contains("hidden")) {
